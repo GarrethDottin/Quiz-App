@@ -1,0 +1,19 @@
+ #container {
+    background-color:red;
+    position: relative;
+    top: 20px;
+    text-align: center;
+    width: 30%;
+    left: 400px;
+  }
+
+  #answers {
+    position: relative;
+    text-align: left;
+  }
+
+  #button{
+    position: relative;
+    right: -60px;
+    width: 100px;
+  }
