@@ -13,5 +13,16 @@ Release 3:
 2. Behavioral Design  COMPLETE
 3. Setup Scoring Feature
 
+Other Stuff: 
+Releases
+-Change internal logic so its not necessary to change the correct Answer  or use + 5 to similuate the difference between the text id and button id
+-Add Score Keeper
+-Implement Tests
+-Add Tracking Bar to show progress
+-Include Backend to Store
+   I. User Data
+   II. Data on Geniuses
+-Implement Design
+-Prototype Design: http://share.axure.com/ZXOH5C/ 
 
 
