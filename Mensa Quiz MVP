@@ -10,19 +10,29 @@ Release 2:
 
 Release 3:
 1. Jasmine Tests
-2. Behavioral Design  COMPLETE
-3. Setup Scoring Feature
+  A. Figure out what to test
+  B. Setup 5-10 Tests
+2. Behavioral Design
+  A. Review Quiz up App
+  B. Review Trostli Design  COMPLETE
+  C. Review Behavioral Design
+3. Setup Scoring Feature COMPLETE
 
-Other Stuff: 
+Release 4:
+1. Touch up Design
+  A. Jquery for new feature
+
+
+Other Stuff:
 Releases
+-Add End of Quiz Score
 -Change internal logic so its not necessary to change the correct Answer  or use + 5 to similuate the difference between the text id and button id
 -Add Score Keeper
--Implement Tests
 -Add Tracking Bar to show progress
 -Include Backend to Store
    I. User Data
    II. Data on Geniuses
 -Implement Design
--Prototype Design: http://share.axure.com/ZXOH5C/ 
+-Prototype Design: http://share.axure.com/ZXOH5C/
 
 

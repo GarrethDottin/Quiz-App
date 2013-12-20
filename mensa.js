@@ -2,9 +2,12 @@ var QuizFeatures = {
   init: function() {
     this.button()
     this.createSkeleton(0)
-    var num = 0
-    $("#button1").on("click", QuizFeatures.checkAnswer.bind(QuizFeatures))
+    var self = this
+    $("#button1").on("click", function() {
+      self.checkAnswer(self.questionNumber);
+    })
   },
+  questionNumber: 0,
   markup:
     {
     addButton: document.getElementById("button"),
@@ -17,7 +20,17 @@ var QuizFeatures = {
   },
   checkAnswer: function(num) {
     var choice = $(':checked')[0].id
-    console.log("hello this is choice " + choice)
+    if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
+      QuizFeatures.score++
+      QuizFeatures.questionNumber++
+      $('#answers').empty()
+      QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
+    }
+    else {
+      QuizFeatures.questionNumber++
+      $('#answers').empty()
+      QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
+    }
   },
   button: function () {
     this.markup.formButton.setAttribute("id", "button1")
