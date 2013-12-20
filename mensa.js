@@ -1,15 +1,4 @@
-// Ways to Refactor
-//
-// -separate on.click anonymous function
-// -add an onload with .init() that calls the listener
-// - change markup to a return function
-// Features:
-// -Add Quiz Score
-// -How do I access variables in other properties
-//
-// Look up other code for scoping COMPLETE
-// Change listener
-//
+
 
 var QuizFeatures = {
   init: function(questionNumber) {
