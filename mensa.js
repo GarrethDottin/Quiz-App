@@ -1,23 +1,9 @@
-// Ways to Refactor
-//
-// -separate on.click anonymous function
-// -add an onload with .init() that calls the listener
-// - change markup to a return function
-// Features:
-// -Add Quiz Score
-// -How do I access variables in other properties
-//
-// Look up other code for scoping COMPLETE
-// Change listener
-//
-
 var QuizFeatures = {
-  init: function(questionNumber) {
+  init: function() {
     this.button()
     this.createSkeleton(0)
-    $("#button1").on("click", function() {
-  alert("this is working")})
-
+    var num = 0
+    $("#button1").on("click", QuizFeatures.checkAnswer.bind(QuizFeatures))
   },
   markup:
     {
@@ -29,12 +15,16 @@ var QuizFeatures = {
     br:  document.createElement("br"),
     answer: document.getElementById("answers")
   },
+  checkAnswer: function(num) {
+    var choice = $(':checked')[0].id
+    console.log("hello this is choice " + choice)
+  },
   button: function () {
     this.markup.formButton.setAttribute("id", "button1")
     this.markup.formButton.innerHTML = "next"
     this.markup.addButton.appendChild(this.markup.formButton)
     },
-  quizQuestions: [{question: "Who is Prime Minister of the United Kingdom?", choices: ["David Cameron", "Gordon Brown", "Winston Churchill", "Tony Blair"], correctAnswer:"5"},{question: "Who is President of the United States?", choices: ["George Bush", "Dave Chappelle", "Barack Obama ", "Jane Doe"], correctAnswer:"7"}, {question: "Who is President of the Republic of South Africa", choices: ["George Bush", "Dave Chappelle", "Barack Obama ", "Rick Ross"], correctAnswer:"6"} ],
+  quizQuestions: [{question: "Who is Prime Minister of the United Kingdom?", choices: ["David Cameron", "Gordon Brown", "Winston Churchill", "Tony Blair"], correctAnswer:"0"},{question: "Who is President of the United States?", choices: ["George Bush", "Dave Chappelle", "Barack Obama ", "Jane Doe"], correctAnswer:"2"}, {question: "Who is President of the Republic of South Africa", choices: ["George Bush", "Dave Chappelle", "Barack Obama ", "Rick Ross"], correctAnswer:"3"} ],
   score: 0,
   createSkeleton: function(num) {
     for (var i = 0; i < QuizFeatures.quizQuestions[num].choices.length; i++) {
@@ -47,20 +37,17 @@ var QuizFeatures = {
       this.markup.answer.appendChild(choice)
       this.markup.answer.appendChild(answer)
       this.markup.answer.appendChild(br)
-      createNextQuestion(num, i)
+      this.createNextQuestion(num, i)
     }
+  },
+  createNextQuestion: function (num, i) {
+    var questionDisplay = document.getElementById('question-display')
+    answerDisplay = document.getElementById(i + "answer")
+    questionDisplay.innerHTML = QuizFeatures.quizQuestions[num].question
+    answerDisplay.innerHTML = QuizFeatures.quizQuestions[num].choices[i]
   }
 }
-QuizFeatures.init(questionNumber)
-
-function createNextQuestion(num, i) {
-  var questionDisplay = document.getElementById('question-display')
-  answerDisplay = document.getElementById(i + "answer")
-  questionDisplay.innerHTML = QuizFeatures.quizQuestions[num].question
-  answerDisplay.innerHTML = QuizFeatures.quizQuestions[num].choices[i]
-
- }
-
+QuizFeatures.init()
   // var choice = $(':checked')[0].id
   // if (choice === QuizFeatures.quizQuestions[questionNumber].correctAnswer) {
   //   questionNumber++
@@ -68,5 +55,5 @@ function createNextQuestion(num, i) {
   //   $('#answers').empty()
   //   QuizFeatures.createSkeleton(questionNumber)
   //   createNextQuestion(questionNumber)
-  // }
+  // ;}
 
