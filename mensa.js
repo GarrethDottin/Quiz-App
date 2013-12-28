@@ -19,6 +19,7 @@ var QuizFeatures = {
     answer: document.getElementById("answers")
   },
   checkAnswer: function(num) {
+    console.log("This is actually hit")
     var choice = $(':checked')[0].id
     if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
       QuizFeatures.score++
@@ -29,6 +30,7 @@ var QuizFeatures = {
     else {
       QuizFeatures.questionNumber++
       $('#answers').empty()
+
       QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
     }
   },
@@ -60,13 +62,7 @@ var QuizFeatures = {
     answerDisplay.innerHTML = QuizFeatures.quizQuestions[num].choices[i]
   }
 }
+
 QuizFeatures.init()
-  // var choice = $(':checked')[0].id
-  // if (choice === QuizFeatures.quizQuestions[questionNumber].correctAnswer) {
-  //   questionNumber++
-  //   QuizFeatures.score++
-  //   $('#answers').empty()
-  //   QuizFeatures.createSkeleton(questionNumber)
-  //   createNextQuestion(questionNumber)
-  // ;}
+
 
