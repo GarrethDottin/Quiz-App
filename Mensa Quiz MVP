@@ -21,18 +21,20 @@ Release 3:
 Release 4:
 1.Redesign of Site:
   A. Styling of Background and Divs
-      I. Background
-      II. Radio Buttons
+      I. Background COMPLETE
+      II. Radio Buttons COMPLETE
       III. Style Divs
+      IV. Style Headers
   B. Add Color Scheme COMPLETE
       I. go over quiz app COMPLETE
       II. go over trostli COMPLETE
 2. Finish Score Keeper
- A. Show Score at the end
+ A. Show Score at the end COMPLETE
  B. Geniuses at the end
 3. Fix Bugs
   A. Multi-checked items
   B. Add 2 more tests
+  C. Move Towards
 
 
 

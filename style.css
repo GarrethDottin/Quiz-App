@@ -2,6 +2,20 @@
 head{
   display: none;
 }
+
+button{
+  width: 80px;
+  height: 25px;
+  position: relative;
+  opacity: 1px;
+  border-radius: 4px;
+  bottom: 0px;
+  background-color: #005073;
+  border-color: #005073;
+  left: 150px;
+}
+
+
 header {
   background-color: #1FB3FF;
   margin-top: -20px;
@@ -18,10 +32,38 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+input[type=checkbox].css-checkbox {
+position: absolute;
+overflow: hidden;
+clip: rect(0 0 0 0);
+height:1px;
+width:1px;
+margin:-1px;
+padding:0;
+border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+padding-left:20px;
+height:15px;
+display:inline-block;
+line-height:15px;
+background-repeat:no-repeat;
+background-position: 0 0;
+font-size:15px;
+vertical-align:middle;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+background-position: 0 -15px;
+}
+
+.css-label{ background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png); }
+
 
 #container {
   background-color:orange;
-  opacity: .80;
+  position: relative;
   border-radius: 6px;
   position: relative;
   top: 20px;

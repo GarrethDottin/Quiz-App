@@ -9,7 +9,7 @@ var QuizFeatures = {
     self.button()
     self.createSkeleton(0)
     $("#button1").on("click", function() {
-      self.checkAnswer(self.questionNumber);
+      self.lastQuestion(self.questionNumber);
     })
   },
   questionNumber: 0,
@@ -24,17 +24,16 @@ var QuizFeatures = {
     answer: document.getElementById("answers")
   },
   checkAnswer: function(num) {
-    console.log("This is actually hit")
     var choice = $(':checked')[0].id
-    if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
-      QuizFeatures.changeQuestion(correct)
+      if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
+        QuizFeatures.changeQuestion(1)
     }
-    else {
-      QuizFeatures.changeQuestion()
+      else {
+        QuizFeatures.changeQuestion()
     }
   },
   changeQuestion: function(correct) {
-    if (correct) {
+    if (1) {
       QuizFeatures.score++
       QuizFeatures.questionNumber++
       $('#answers').empty()
@@ -49,12 +48,18 @@ var QuizFeatures = {
     }
 
   },
-  lastQuestion: function () {
-    if (QuizFeatures.questionNumber === QuizFeatures.quizQuestions[0].length )
+  lastQuestion: function (num) {
+    console.log("before the function")
+    if (QuizFeatures.questionNumber   === QuizFeatures.quizQuestions.length -1 ) {
+      console.log("this is hit")
       $('#answers').empty()
       QuizFeatures.markup.questionDisplay.innerHTML = QuizFeatures.score
     }
-  }
+    else {
+        console.log("this is hit instead else")
+        QuizFeatures.checkAnswer(num)
+    }
+  },
 
   button: function () {
     this.markup.formButton.setAttribute("id", "button1")
@@ -66,10 +71,13 @@ var QuizFeatures = {
   createSkeleton: function(num) {
     for (var i = 0; i < QuizFeatures.quizQuestions[num].choices.length; i++) {
       var choice = document.createElement("input");
-      var answer = document.createElement("text");
+      var answer = document.createElement("label");
       var br = document.createElement("br");
-      choice.setAttribute("type", "radio")
-      choice.setAttribute("id",  i)
+      choice.setAttribute("type", "checkbox")
+      choice.setAttribute("id", "demo_box_" + i)
+      choice.setAttribute("class", "css-checkbox")
+      answer.setAttribute("class", "css-label")
+      answer.setAttribute("for", "demo_box_" + i)
       answer.setAttribute("id", i + "answer")
       this.markup.answer.appendChild(choice)
       this.markup.answer.appendChild(answer)
