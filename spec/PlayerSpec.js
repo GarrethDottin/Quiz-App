@@ -23,10 +23,10 @@ describe("calling of checkAnswer functions", function() {
   })
   it ("changes the questionNumber", function(){
       spyOn(QuizFeatures,"checkAnswer").andCallFake(function() {
-       createSkeleton()
+       QuizFeatures.createSkeleton()
       })
       QuizFeatures.checkAnswer(0);
-      expect(createSkeleton).toHaveBeenCalled();
+      expect(QuizFeatures.createSkeleton).toHaveBeenCalled();
   })
 
 

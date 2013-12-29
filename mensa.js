@@ -1,8 +1,13 @@
+// function that increases question number  COMPLETE
+// Function that handles correct COMPLETE
+//
+// function that checks if its at the last question
+// Function that display new data
 var QuizFeatures = {
   init: function() {
-    this.button()
-    this.createSkeleton(0)
     var self = this
+    self.button()
+    self.createSkeleton(0)
     $("#button1").on("click", function() {
       self.checkAnswer(self.questionNumber);
     })
@@ -22,18 +27,35 @@ var QuizFeatures = {
     console.log("This is actually hit")
     var choice = $(':checked')[0].id
     if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
+      QuizFeatures.changeQuestion(correct)
+    }
+    else {
+      QuizFeatures.changeQuestion()
+    }
+  },
+  changeQuestion: function(correct) {
+    if (correct) {
       QuizFeatures.score++
       QuizFeatures.questionNumber++
       $('#answers').empty()
       QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
+
     }
     else {
       QuizFeatures.questionNumber++
       $('#answers').empty()
-
       QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
+
     }
+
   },
+  lastQuestion: function () {
+    if (QuizFeatures.questionNumber === QuizFeatures.quizQuestions[0].length )
+      $('#answers').empty()
+      QuizFeatures.markup.questionDisplay.innerHTML = QuizFeatures.score
+    }
+  }
+
   button: function () {
     this.markup.formButton.setAttribute("id", "button1")
     this.markup.formButton.innerHTML = "next"
