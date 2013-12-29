@@ -1,0 +1,77 @@
+Mensa Quiz MVP
+1. Array of Questions  COMPLETE
+2. Hash of Answers COMPLETE
+3. Program Checks if Answer is correct  COMPLETE
+
+Release 2:
+1. Add More Questions Complete
+2. Add Module Pattern  COMPLETE
+3. Stylized with Positioning COMPLETE
+
+Release 3:
+1. Jasmine Tests COMPLETE
+  A. Figure out what to test COMPLETE
+  B. Setup 5-10 Tests
+2. Behavioral Design COMPLETE
+  A. Review Quiz up App COMPLETE
+  B. Review Trostli Design  COMPLETE
+  C. Review Behavioral Design COMPLETE
+3. Setup Scoring Feature COMPLETE
+
+Release 4:
+1.Redesign of Site:
+  A. Styling of Background and Divs
+      I. Background COMPLETE
+      II. Radio Buttons COMPLETE
+      III. Style Divs
+      IV. Style Headers
+  B. Add Color Scheme COMPLETE
+      I. go over quiz app COMPLETE
+      II. go over trostli COMPLETE
+2. Finish Score Keeper
+ A. Show Score at the end COMPLETE
+ B. Geniuses at the end
+3. Fix Bugs
+  A. Multi-checked items
+  B. Add 2 more tests
+  C. Move Towards
+
+
+
+Feature Releases: 5 and on ward
+
+-Add Tracking Bar to show progress
+-Include Backend to Store
+   I. User Data
+   II. Data on Geniuses
+-Meter Displaying Progress through exam
+-Swiping gesture after each question
+
+Stuff to Research:
+-Prototype Design: http://share.axure.com/ZXOH5C/
+-How to add swiping gesture
+-How to add progress meter
+-Color Scheme using orange properly
+-
+
+
+-My Article
+   I. Gives us a good frame of reference for when we have users for doing cohort analysis
+
+   II. We can use the retention rate to understand the strength of a habit
+
+-Great Article
+   I. We should research the type of people that
+   use product hunt its similar to fydo people who want to be in the know and those who suffer from Fear of Missing Out
+
+   II. They did a great job of following the Desire Engine
+   Internal Trigger: FOMO  Perceived Ability: Simple Design and Concept Commitment: having users write tag lines Variable Rewards: Community and a new winner every day
+
+   III. They only started their service in the beginning of December
+
+   IV. Product Hunt makes a great point of picking up an
+   activity that people already do
+
+   V. Makes me think we need to either simplify fydo to just apps or to-do list or we need to rebrand it to be simple and easy to explain the habit
+
+
