@@ -6,6 +6,7 @@ var QuizFeatures = {
     QuizFeatures.checkedItem()
     $("#button1").on("click", function() {
       self.lastQuestion(self.questionNumber);
+      QuizFeatures.checkedItem()
     })
   },
   checkedItem: function() {
@@ -29,30 +30,35 @@ var QuizFeatures = {
   },
   checkAnswer: function(num) {
     var choice = $(':checked')[0].id
-      if (choice === QuizFeatures.quizQuestions[num].correctAnswer ) {
-        QuizFeatures.changeQuestion(1)
+    var correct = "demo_box_" + QuizFeatures.quizQuestions[num].correctAnswer
+      if (choice == correct ) {
+        console.log("this was hit")
+        QuizFeatures.correctAnswer()
     }
       else {
-        QuizFeatures.changeQuestion()
+        console.log("the incorrect answer was hit")
+        QuizFeatures.wrongAnswer()
     }
   },
-  changeQuestion: function(correct) {
-    if (1) {
-      QuizFeatures.score++
-      QuizFeatures.questionNumber++
-      $('#answers').empty()
-      QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
-    }
-    else {
-      QuizFeatures.questionNumber++
-      $('#answers').empty()
-      QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
-
-    }
-
+  correctAnswer: function() {
+    QuizFeatures.score++
+    QuizFeatures.questionNumber++
+    $('#answers').empty()
+    QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
   },
+  wrongAnswer: function() {
+    QuizFeatures.questionNumber++
+    $('#answers').empty()
+    QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
+  },
+
   lastQuestion: function (num) {
     if (QuizFeatures.questionNumber === QuizFeatures.quizQuestions.length -1 ) {
+      var choice = $(':checked')[0].id
+      var correct = "demo_box_" + QuizFeatures.quizQuestions[num].correctAnswer
+      if (choice == correct) {
+        QuizFeatures.score++
+      }
       $('#answers').empty()
       QuizFeatures.markup.questionDisplay.innerHTML = QuizFeatures.score
     }

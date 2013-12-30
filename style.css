@@ -1,15 +1,50 @@
+.primary {
+  background-color: #2a2a2a;
+  margin-top: -30px;
+  margin-right: -20px;
+  margin-left: -15px;
+  border-radius: 10px;
+  border-color: #4BA2EF;
+  border-style: solid;
+  border-width: 4px;
+  height: 50px;
+  width: 15000px;
+}
+
+
+#container {
+  background-color:#D3D3D3;
+  position: relative;
+  border-radius: 4px;
+  top: 20px;
+  text-align: center;
+  box-shadow: 2px 2px 2px black;
+  width: 30%;
+  left: 400px;
+}
+
+.title {
+  position: relative;
+  left: 15px;
+  color: #EF9A12;
+  font-family:'LatoBoldItalic',Arial,sans-serif;
+  font-size:35px;
+  top: -10px;
+  font-weight: 600px;
+  letter-spacing:0;
+  height:20px;
+  font-weight: bold-italic;
+}
+
 
 #question-display {
- font-family: 'Lato';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+  font-size: 25px;
+  font-family:'LatoBoldItalic',Arial,sans-serif;
   top: 5px
 }
-head{
-  display: none;
-}
+
 
 .line-separator {
   height: 1px;
@@ -20,6 +55,12 @@ head{
   margin-left: auto;
   margin-right: auto;
 }
+
+#answers {
+  position: relative;
+  text-align: left;
+}
+
 button{
   width: 80px;
   height: 25px;
@@ -33,15 +74,6 @@ button{
 }
 
 
-header {
-  background-color: #1FB3FF;
-  margin-top: -20px;
-  margin-right: -20px;
-  margin-left: -15px;
-  box-shadow: 2px 4px 20px;
-  height: 100px;
-  width: 15000px;
-}
 html {
   background: url(Background_image_phenom.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -65,9 +97,11 @@ padding-left:20px;
 height:15px;
 display:inline-block;
 line-height:15px;
+margin: 7px;
 background-repeat:no-repeat;
 background-position: 0 0;
 font-size:15px;
+font-family:'LatoBoldItalic',Arial,sans-serif;
 vertical-align:middle;
 }
 
@@ -75,23 +109,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 background-position: 0 -15px;
 }
 
-.css-label{ background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png); }
-
-
-
-#container {
-  background-color:#D3D3D3;
-  position: relative;
-  border-radius: 4px;
-  top: 20px;
-  text-align: center;
-  box-shadow: 2px 2px 2px black;
-  width: 30%;
-  left: 400px;
-}
-
-#answers {
-  position: relative;
-  text-align: left;
-}
+.css-label{
+  margin: 5px, 5px,5px, 5px;
+  background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png); }
 
