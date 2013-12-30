@@ -1,16 +1,20 @@
-// function that increases question number  COMPLETE
-// Function that handles correct COMPLETE
-//
-// function that checks if its at the last question
-// Function that display new data
 var QuizFeatures = {
   init: function() {
     var self = this
     self.button()
     self.createSkeleton(0)
+    QuizFeatures.checkedItem()
     $("#button1").on("click", function() {
       self.lastQuestion(self.questionNumber);
     })
+  },
+  checkedItem: function() {
+    $("input:checkbox").change(function(){
+      var group = ":checkbox[name='"+ $(this).attr("name") + "']";
+      if($(this).is(':checked')){
+        $(group).not($(this)).attr("checked",false);
+      }
+    });
   },
   questionNumber: 0,
   markup:
@@ -38,7 +42,6 @@ var QuizFeatures = {
       QuizFeatures.questionNumber++
       $('#answers').empty()
       QuizFeatures.createSkeleton(QuizFeatures.questionNumber)
-
     }
     else {
       QuizFeatures.questionNumber++
@@ -49,14 +52,11 @@ var QuizFeatures = {
 
   },
   lastQuestion: function (num) {
-    console.log("before the function")
-    if (QuizFeatures.questionNumber   === QuizFeatures.quizQuestions.length -1 ) {
-      console.log("this is hit")
+    if (QuizFeatures.questionNumber === QuizFeatures.quizQuestions.length -1 ) {
       $('#answers').empty()
       QuizFeatures.markup.questionDisplay.innerHTML = QuizFeatures.score
     }
     else {
-        console.log("this is hit instead else")
         QuizFeatures.checkAnswer(num)
     }
   },
@@ -76,6 +76,7 @@ var QuizFeatures = {
       choice.setAttribute("type", "checkbox")
       choice.setAttribute("id", "demo_box_" + i)
       choice.setAttribute("class", "css-checkbox")
+      choice.setAttribute("name", "choices")
       answer.setAttribute("class", "css-label")
       answer.setAttribute("for", "demo_box_" + i)
       answer.setAttribute("id", i + "answer")
